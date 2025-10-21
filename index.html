@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moise bakery | home</title>
+
+    <!-- CSS & Icon -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <style>
+        /* --- Basic Styling --- */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffaf3;
+            color: #322e2e;
+        }
+
+        header {
+            background-color: #f1a72e;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header h1 img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: url('images/bakery-bg.jpg') center/cover no-repeat;
+            text-align: center;
+            padding: 120px 20px;
+            color: white;
+            background-color: #706a6a80;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background-color: #f5c16c;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #d99c3a;
+        }
+
+        /* --- Product Preview --- */
+        .products {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .products h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .product {
+            background: rgb(240, 237, 237);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgb(254, 253, 253);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 170px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .product h4 {
+            margin: 10px 0 5px;
+        }
+
+        .product p {
+            color: #f5a623;
+            font-weight: 700;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #969492;
+            color: rgb(238, 229, 229);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>
+            <img src="images/logo.png" alt="Mucyo Bakery Logo">
+            MUCYO FAMILY BAKERY
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ahabanza</a></li>
+                <li><a href="products.html">Ibicuruzwa</a></li>
+                <li><a href="about.html">Abo turi bo</a></li>
+                <li><a href="contact.html">Tuvugishe</a></li>
+                <li><a href="cart.html">Ibyaguzwe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Byose bishyushye, bishya kandi biryoshye 🍞</h2>
+        <p>Gura migati, cake & amandazi byiza — bishyurwe ukoresheje Mobile Money, tukuzanire ku rugi.</p>
+        <a href="products.html" class="btn">Tangira kugura</a>
+    </section>
+
+    <!-- Product Preview -->
+    <section class="products">
+        <h3>Ibicuruzwa byacu</h3>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/manstand.jpg" alt="Imigati ishyushye">
+                <h4>Migati ishyushye</h4>
+                <p>2000 RWF</p>
+            </div>
+            <div class="product">
+                <img src="images/keke.jpg" alt="Cake">
+                <h4>Cake y’urukundo</h4>
+                <p>15,000 RWF</p>
+            </div>
+            <div class="product">
+                <img src="images/amandazi.jpg" alt="Amandazi">
+                <h4>Amandazi meza</h4>
+                <p>1500 RWF</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>📞 0788658547 | ✉️ mucyofamilybakery@gmail.com</p>
+        <p>© 2025 Mucyo Family Bakery — All Rights Reserved</p>
+    </footer>
+
+    <!-- JS script (ishyirwa hasi ya body) -->
+    <script src="js/script.js"></script>
+</body>
+</html>

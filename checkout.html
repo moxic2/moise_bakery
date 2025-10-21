@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Mucyo Family Bakery</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:#fffaf3; color:#333; }
+        header { background:#f5c16c; color:white; padding:15px 40px; display:flex; justify-content:space-between; align-items:center; }
+        nav ul { list-style:none; margin:0; display:flex; gap:20px; }
+        nav ul li a { text-decoration:none; color:white; font-weight:600; }
+        nav ul li a:hover { text-decoration:underline; }
+
+        h2 { text-align:center; margin:30px 0; font-size:28px; }
+        .cart-table { width:90%; max-width:700px; margin:20px auto; border-collapse:collapse; }
+        .cart-table th, .cart-table td { padding:12px; text-align:center; border:1px solid #ccc; }
+        .cart-table th { background:#f5c16c; color:white; }
+        form { max-width:500px; margin:20px auto; background:white; padding:30px; border-radius:15px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+        label { display:block; margin-bottom:8px; font-weight:600; }
+        input, textarea { width:100%; padding:10px; margin-bottom:20px; border-radius:8px; border:1px solid #ccc; font-size:14px; }
+        .btn { background:#f5c16c; color:white; padding:12px 20px; border:none; border-radius:25px; font-weight:600; cursor:pointer; transition:0.3s; width:100%; }
+        .btn:hover { background:#d99c3a; }
+        .instructions { text-align:center; margin-top:30px; font-size:16px; color:#555; }
+        footer { background:#f5c16c; color:white; text-align:center; padding:20px; margin-top:40px; }
+        footer p { margin:5px 0; font-size:14px; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Mucyo Family Bakery</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ahabanza</a></li>
+                <li><a href="products.html">Ibicuruzwa</a></li>
+                <li><a href="about.html">Abo turi bo</a></li>
+                <li><a href="contact.html">Tuvugishe</a></li>
+                <li><a href="cart.html">🛒 Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Ikarita y’ibyo waguze</h2>
+
+    <table class="cart-table" id="cart-table">
+        <thead>
+            <tr>
+                <th>Igicuruzwa</th>
+                <th>Igiciro</th>
+                <th>Umubare</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody id="cart-body">
+            <!-- Products by JS -->
+        </tbody>
+    </table>
+
+    <div style="text-align:center; margin-bottom:20px;">
+        <strong>Total: </strong><span id="cart-total">0</span> RWF
+    </div>
+
+    <!-- Checkout Form -->
+    <form id="checkout-form">
+        <label for="name">Amazina yawe</label>
+        <input type="text" id="name" name="name" required placeholder="Andika amazina yawe...">
+
+        <label for="phone">Numero ya telefone</label>
+        <input type="text" id="phone" name="phone" required placeholder="Ex: 0788XXXXXX">
+
+        <label for="address">Aderesi y'aho ibyo waguze bizajyanwa</label>
+        <textarea id="address" name="address" rows="3" required placeholder="Andika aho wohereza..."></textarea>
+
+        <button type="submit" class="btn">Ohereza & Emeza</button>
+    </form>
+
+    <div class="instructions" id="instructions" style="display:none;">
+        <p>Murakoze! ✅</p>
+        <p>Shyira amafaranga kuri Mobile Money kuri iyi nimero: <strong>0788658547</strong></p>
+        <p>Message: <strong>"Mucyo Bakery Order"</strong></p>
+    </div>
+
+    <footer>
+        <p>📞 0788658547 | ✉️ mucyofamilybakery@gmail.com</p>
+        <p>© 2025 Mucyo Family Bakery — All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Fata cart muri localStorage
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartBody = document.getElementById('cart-body');
+        const cartTotal = document.getElementById('cart-total');
+
+        function displayCart() {
+            cartBody.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.price} RWF</td>
+                    <td>${item.quantity}</td>
+                    <td>${subtotal} RWF</td>
+                `;
+                cartBody.appendChild(row);
+            });
+            cartTotal.textContent = total;
+        }
+
+        displayCart();
+
+        // Form submission
+        const form = document.getElementById('checkout-form');
+        const instructions = document.getElementById('instructions');
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+
+            // Bika order muri localStorage (optional)
+            const order = { name, phone, address, cart, date: new Date() };
+            localStorage.setItem('lastOrder', JSON.stringify(order));
+
+            // Clear cart
+            localStorage.removeItem('cart');
+
+            // Erekana amabwiriza yo kwishyura
+            form.style.display = 'none';
+            instructions.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
