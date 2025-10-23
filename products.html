@@ -1,277 +1,129 @@
 <!DOCTYPE html>
 <html lang="rw">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>miose bakery | products</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fffaf3;
-            color: #333;
-        }
-
-        header {
-            background-color: #f5c16c;
-            color: white;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-container img {
-            height: 50px;
-        }
-
-        header h1 {
-            font-size: 26px;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .page-title {
-            text-align: center;
-            padding: 50px 20px 10px;
-        }
-
-        .page-title h2 {
-            font-size: 32px;
-            color: #333;
-        }
-
-        .search-bar {
-            text-align: center;
-            margin: 20px auto;
-        }
-
-        .search-bar input {
-            width: 70%;
-            max-width: 400px;
-            padding: 10px;
-            border-radius: 30px;
-            border: 1px solid #ccc;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
-            padding: 40px;
-        }
-
-        .product {
-            background: white;
-            border-radius: 15px;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .product:hover {
-            transform: translateY(-6px);
-        }
-
-        .product img {
-            width: 100%;
-            height: 180px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
-        .product h4 {
-            margin: 10px 0 5px;
-            color: #444;
-        }
-
-        .product p {
-            color: #f5a623;
-            font-weight: 700;
-        }
-
-        .btn {
-            background-color: #f5c16c;
-            color: white;
-            padding: 8px 18px;
-            border: none;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #d99c3a;
-        }
-
-        footer {
-            background-color: #f5c16c;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        footer p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mucyo Bakery | Ibicuruzwa</title>
+<link rel="icon" href="images/logo.png">
+<style>
+  body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:#fffaf3; color:#333; }
+  header { background:#f5c16c; color:white; padding:15px 40px; display:flex; justify-content:space-between; align-items:center; }
+  .logo-container { display:flex; align-items:center; gap:10px; }
+  .logo-container img { height:50px; }
+  header h1 { margin:0; font-size:26px; font-weight:700; }
+  nav ul { list-style:none; margin:0; display:flex; gap:20px; }
+  nav ul li a { text-decoration:none; color:white; font-weight:600; }
+  #logoutBtn { background:#8d8787; color:white; border:none; border-radius:20px; padding:8px 15px; cursor:pointer; font-weight:600; }
+  .page-title { text-align:center; padding:50px 20px 10px; }
+  .page-title h2 { font-size:32px; color:#333; }
+  .search-bar { text-align:center; margin:20px auto; }
+  .search-bar input { width:70%; max-width:400px; padding:10px; border-radius:30px; border:1px solid #ccc; }
+  .product-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:25px; padding:40px; }
+  .product { background:white; border-radius:15px; padding:15px; box-shadow:0 4px 8px rgba(0,0,0,0.1); text-align:center; transition:0.3s; }
+  .product:hover { transform:translateY(-6px); }
+  .product img { width:100%; height:180px; border-radius:10px; object-fit:cover; }
+  .product h4 { margin:10px 0 5px; color:#444; }
+  .product p { color:#f5a623; font-weight:700; }
+  .btn { background:#f5c16c; color:white; padding:8px 18px; border:none; border-radius:25px; font-weight:600; cursor:pointer; }
+  footer { background:#f5c16c; color:white; text-align:center; padding:20px; margin-top:40px; }
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Mucyo Family Bakery Logo">
-            <h1>MUCYO FAMILY BAKERY</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ahabanza</a></li>
-                <li><a href="products.html">Ibicuruzwa</a></li>
-                <li><a href="about.html">Abo turi bo</a></li>
-                <li><a href="contact.html">Tuvugishe</a></li>
-                <li><a href="cart.html">🛒 Cart</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Title -->
-    <section class="page-title">
-        <h2>Ibicuruzwa byacu byose 🍰</h2>
-        <div class="search-bar">
-            <input type="text" placeholder="Shakisha igicuruzwa (urugero: cake, amandazi...)">
-        </div>
-    </section>
+<header>
+  <div class="logo-container">
+    <img src="images/logo.png" alt="Mucyo Family Bakery Logo">
+    <h1>MUCYO FAMILY BAKERY</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Ahabanza</a></li>
+      <li><a href="products.html">Ibicuruzwa</a></li>
+      <li><a href="about.html">Abo turi bo</a></li>
+      <li><a href="contact.html">Tuvugishe</a></li>
+      <li><a href="cart.html">🛒 Ikarita</a></li>
+    </ul>
+  </nav>
+  <button id="logoutBtn">Sohoka</button>
+</header>
 
-    <!-- Product Catalogue -->
-    <section class="product-grid">
-        <div class="product">
-            <img src="images/bread.jpg" alt="Migati">
-            <h4>Migati ishyushye</h4>
-            <p>2000 RWF</p>
-            <button class="btn" onclick="addToCart(0)">Add to Cart</button>
-        </div>
+<section class="page-title">
+  <h2>Ibicuruzwa byacu byose 🍰</h2>
+  <div class="search-bar">
+    <input type="text" placeholder="Shakisha igicuruzwa (urugero: cake, amandazi...)">
+  </div>
+</section>
 
-        <div class="product">
-            <img src="images/keke.jpg" alt="Cake">
-            <h4>Cake y’urukundo</h4>
-            <p>15,000 RWF</p>
-            <button class="btn" onclick="addToCart(1)">Add to Cart</button>
-        </div>
+<section class="product-grid">
+  <!-- JS izashyiraho products -->
+</section>
 
-        <div class="product">
-            <img src="images/amandazi.jpg" alt="Amandazi">
-            <h4>Amandazi meza</h4>
-            <p>1500 RWF</p>
-            <button class="btn" onclick="addToCart(2)">Add to Cart</button>
-        </div>
+<footer>
+  <p>📞 0788658547 | ✉️ mucyofamilybakery@gmail.com</p>
+  <p>© 2025 Mucyo Family Bakery — All Rights Reserved</p>
+</footer>
 
-        <div class="product">
-            <img src="images/biscuit.jpg" alt="Biscuit">
-            <h4>Biscuit z’umwimerere</h4>
-            <p>2500 RWF</p>
-            <button class="btn" onclick="addToCart(3)">Add to Cart</button>
-        </div>
+<script>
+  // 🧩 AUTH CHECK: niba nta token, subira ku index.html
+  const token = localStorage.getItem("authToken");
+  if (!token) {
+    alert("banza winjire cyangwa ufungure konti mbere yo kureba ibicuruzwa.");
+    window.location.href = "index.html";
+  }
 
-        <div class="product">
-            <img src="images/cupcake.jpg" alt="Cupcake">
-            <h4>Cupcake zifite cream</h4>
-            <p>5000 RWF</p>
-            <button class="btn" onclick="addToCart(4)">Add to Cart</button>
-        </div>
+  // 🧩 LOGOUT BUTTON
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("authToken");
+    alert("Wasezeye neza. Murakoze!");
+    window.location.href = "index.html";
+  });
 
-        <div class="product">
-            <img src="images/donut.jpg" alt="Donut">
-            <h4>Donut ziryoshye</h4>
-            <p>3000 RWF</p>
-            <button class="btn" onclick="addToCart(5)">Add to Cart</button>
-        </div>
-    </section>
+  // 🧩 PRODUCT DATA
+  const products = [
+    { name:"Migati ishyushye", price:2000, img:"images/manstand.jpg" },
+    { name:"Cake y’urukundo", price:15000, img:"images/keke.jpg" },
+    { name:"Amandazi meza", price:1500, img:"images/amandazi.jpg" },
+    { name:"Biscuit z’umwimerere", price:2500, img:"images/biscuit.jpg" },
+    { name:"Cupcake zifite cream", price:5000, img:"images/cupcake.jpg" },
+    { name:"Donut ziryoshye", price:3000, img:"images/donut.jpg" }
+  ];
 
-    <script>
-        const products = [
-            { name: "Migati ishyushye", price: 2000, img: "images/bread.jpg" },
-            { name: "Cake y’urukundo", price: 15000, img: "images/keke.jpg" },
-            { name: "Amandazi meza", price:1500 , img: "images/amandazi.jpg" },
-            { name: "Biscuit z’umwimerere", price: 2500, img: "images/biscuit.jpg" },
-            { name: "Cupcake zifite cream", price: 5000, img: "images/cupcake.jpg" },
-            { name: "Donut ziryoshye", price: 3000, img: "images/donut.jpg" }
-        ];
+  const productGrid = document.querySelector('.product-grid');
+  const searchInput = document.querySelector('.search-bar input');
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const searchInput = document.querySelector('.search-bar input');
-        const productGrid = document.querySelector('.product-grid');
+  function displayProducts(list){
+    productGrid.innerHTML = '';
+    list.forEach((p,i)=>{
+      const div = document.createElement('div');
+      div.className='product';
+      div.innerHTML=`
+        <img src="${p.img}" alt="${p.name}">
+        <h4>${p.name}</h4>
+        <p>${p.price} RWF</p>
+        <button class="btn" onclick="addToCart(${i})">Ongeraho mu ikarita</button>
+      `;
+      productGrid.appendChild(div);
+    });
+  }
 
-        function displayProducts(list) {
-            productGrid.innerHTML = '';
-            list.forEach((product, index) => {
-                const productDiv = document.createElement('div');
-                productDiv.className = 'product';
-                productDiv.innerHTML = `
-                    <img src="${product.img}" alt="${product.name}">
-                    <h4>${product.name}</h4>
-                    <p>${product.price} RWF</p>
-                    <button class="btn" onclick="addToCart(${index})">Add to Cart</button>
-                `;
-                productGrid.appendChild(productDiv);
-            });
-        }
+  searchInput.addEventListener('input', ()=>{
+    const q = searchInput.value.toLowerCase();
+    const filtered = products.filter(p=>p.name.toLowerCase().includes(q));
+    displayProducts(filtered);
+  });
 
-        function addToCart(index) {
-            const product = products[index];
-            const exist = cart.find(item => item.name === product.name);
-            if (exist) {
-                exist.quantity += 1;
-            } else {
-                cart.push({ name: product.name, price: product.price, quantity: 1 });
-            }
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(product.name + " yongewe mu ikarita!");
-        }
+  function addToCart(index){
+    const item = products[index];
+    const exist = cart.find(i=>i.name===item.name);
+    if(exist){ exist.quantity +=1; }
+    else{ cart.push({ name:item.name, price:item.price, quantity:1 }); }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(item.name + " yongewe mu ikarita!");
+  }
 
-        searchInput.addEventListener('input', () => {
-            const query = searchInput.value.toLowerCase();
-            const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-            displayProducts(filtered);
-        });
+  displayProducts(products);
+</script>
 
-        displayProducts(products);
-    </script>
-
-    <!-- Footer -->
-    <footer>
-        <p>📞 0788658547 | ✉️ mucyofamilybakery@gmail.com</p>
-        <p>© 2025 Mucyo Family Bakery — All Rights Reserved</p>
-    </footer>
 </body>
 </html>
