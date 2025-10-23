@@ -1,94 +1,102 @@
 <!DOCTYPE html>
 <html lang="rw">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>moise bakery | about</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:#fffaf3; color:#333; }
-        header { background:#f5c16c; color:white; padding:15px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
-        header .logo-container { display:flex; align-items:center; gap:15px; }
-        header .logo-container img { height:50px; }
-        header .logo-container h1 { margin:0; font-size:24px; }
-
-        nav ul { list-style:none; margin:0; display:flex; gap:20px; flex-wrap:wrap; }
-        nav ul li a { text-decoration:none; color:white; font-weight:600; }
-        nav ul li a:hover { text-decoration:underline; }
-
-        .page-title { text-align:center; padding:50px 20px 20px; }
-        .page-title h2 { font-size:32px; color:#333; }
-
-        .content { max-width:900px; margin:0 auto; padding:20px; line-height:1.6; font-size:16px; }
-
-        .team { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:25px; margin-top:30px; }
-        .member { background:white; border-radius:15px; padding:15px; text-align:center; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
-        .member img { width:100%; border-radius:10px; height:180px; object-fit:cover; }
-        .member h4 { margin:10px 0 5px; color:#444; }
-        .member p { color:#555; font-size:14px; }
-
-        footer { background:#f5c16c; color:white; text-align:center; padding:20px; margin-top:40px; }
-        footer p { margin:5px 0; font-size:14px; }
-
-        @media (max-width:600px){
-            header { flex-direction:column; align-items:flex-start; }
-            nav ul { flex-direction:column; gap:10px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mucyo Family Bakery | Abo Turi Bo</title>
+<link rel="icon" href="images/logo.png">
+<style>
+  body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:#fffaf3; color:#333; }
+  header { background:#f5c16c; color:white; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+  .logo-container { display:flex; align-items:center; gap:15px; }
+  .logo-container img { height:50px; }
+  .logo-container h1 { margin:0; font-size:24px; }
+  nav ul { list-style:none; margin:0; display:flex; gap:20px; flex-wrap:wrap; }
+  nav ul li a { text-decoration:none; color:white; font-weight:600; }
+  nav ul li a:hover { text-decoration:underline; }
+  #logoutBtn { background:#8d8787; color:white; border:none; border-radius:20px; padding:8px 15px; cursor:pointer; font-weight:600; }
+  .page-title { text-align:center; padding:50px 20px 20px; }
+  .page-title h2 { font-size:32px; color:#333; }
+  .content { max-width:900px; margin:0 auto; padding:20px; line-height:1.6; font-size:16px; }
+  .team { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:25px; margin-top:30px; }
+  .member { background:white; border-radius:15px; padding:15px; text-align:center; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition:0.3s; }
+  .member:hover { transform:translateY(-5px); box-shadow:0 8px 16px rgba(0,0,0,0.2); }
+  .member img { width:100%; border-radius:10px; height:180px; object-fit:cover; }
+  .member h4 { margin:10px 0 5px; color:#444; }
+  .member p { color:#555; font-size:14px; }
+  footer { background:#f5c16c; color:white; text-align:center; padding:20px; margin-top:40px; }
+  footer p { margin:5px 0; font-size:14px; }
+  @media (max-width:600px){
+      header { flex-direction:column; align-items:flex-start; }
+      nav ul { flex-direction:column; gap:10px; margin-top:10px; }
+  }
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Mucyo Family Bakery Logo">
-            <h1>Mucyo Family Bakery</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ahabanza</a></li>
-                <li><a href="products.html">Ibicuruzwa</a></li>
-                <li><a href="about.html">Abo turi bo</a></li>
-                <li><a href="contact.html">Tuvugishe</a></li>
-                <li><a href="cart.html">🛒 Cart</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Page Title -->
-    <section class="page-title">
-        <h2>Abo Turi Bo</h2>
-    </section>
+<header>
+  <div class="logo-container">
+    <img src="images/logo.png" alt="Mucyo Family Bakery Logo">
+    <h1>Mucyo Family Bakery</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Ahabanza</a></li>
+      <li><a href="products.html">Ibicuruzwa</a></li>
+      <li><a href="about.html">Abo turi bo</a></li>
+      <li><a href="contact.html">Tuvugishe</a></li>
+      <li><a href="cart.html">🛒 Ikarita</a></li>
+    </ul>
+  </nav>
+  <button id="logoutBtn">Sohoka</button>
+</header>
 
-    <!-- About Content -->
-    <div class="content">
-        <p>Mucyo Family Bakery ni bakery y'ubwoko bw'umuryango yashinzwe mu 2020, igamije gutanga ibiribwa byiza kandi by'umwimerere ku baturage bose. Tugendera ku ndangagaciro z’ubwiza, isuku, no guha abakiriya bacu serivisi nziza.</p>
-        <p>Turi itsinda ry'abantu bakunda guteka no gukora ibiribwa bishimishije: migati, cake, amandazi, na pastries zose. Dufite intego yo gutuma buri mukiriya yishimira ibyo yaguze kandi agasubira kandi.</p>
-        <p>Ubutumwa bwacu ni: <strong>"Kwizihiza buri munsi hamwe n'ibiribwa byiza!"</strong></p>
-    </div>
+<!-- Authentication Check -->
+<script>
+  const token = localStorage.getItem("authToken");
+  if(!token){
+      alert("Ubanje kwinjira mbere yo kureba iyi page.");
+      window.location.href = "index.html";
+  }
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("authToken");
+      alert("Wasezeye neza.");
+      window.location.href = "index.html";
+  });
+</script>
 
-    <!-- Team Members -->
-    <section class="team">
-        <div class="member">
-            <img src="images/owner.jpg" alt="Owner">
-            <h4>MANZI GISA EMMANUEL</h4>
-            <p>ceo & Head Baker</p>
-        </div>
-        <div class="member">
-            <img src="images/boy1.jpg" alt="Baker">
-            <h4>IBYIMANA MOISE</h4>
-            <p>DESIGER</p>
-        </div>
-        <div class="member">
-            <img src="images/boy.jpg" alt="Baker">
-            <h4>GERMAINE</h4>
-            <p>Baker & Pastry Chef</p>
-        </div>
-    </section>
+<section class="page-title">
+  <h2>Abo Turi Bo</h2>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>📞 0788658547 | ✉️ mucyofamilybakery@gmail.com</p>
-        <p>© 2025 Mucyo Family Bakery — All Rights Reserved</p>
-    </footer>
+<div class="content">
+  <p>Mucyo Family Bakery ni bakery y'umuryango yashinzwe mu 2020, igamije gutanga ibiribwa byiza kandi by'umwimerere ku baturage bose. Tugendera ku ndangagaciro z’ubwiza, isuku, no guha abakiriya bacu serivisi nziza.</p>
+  <p>Turi itsinda ry'abantu bakunda guteka no gukora ibiribwa bishimishije: migati, cake, amandazi, na pastries zose. Dufite intego yo gutuma buri mukiriya yishimira ibyo yaguze kandi agasubira kandi.</p>
+  <p>Ubutumwa bwacu ni: <strong>"Kwizihiza buri munsi hamwe n'ibiribwa byiza!"</strong></p>
+</div>
+
+<section class="team">
+  <div class="member">
+    <img src="images/owner.jpg" alt="Owner">
+    <h4>MANZI GISA EMANUEL</h4>
+    <p>Owner & Head Baker</p>
+  </div>
+  <div class="member">
+    <img src="images/boy1.jpg" alt="Baker">
+    <h4>IBYIMANA MOISE</h4>
+    <p>Baker</p>
+  </div>
+  <div class="member">
+    <img src="images/boy.jpg" alt="Baker">
+    <h4>GERMAINE</h4>
+    <p>Baker & Pastry Chef</p>
+  </div>
+</section>
+
+<footer>
+  <p>📞 0788658547 | ✉️ mucyofamilybakery@gmail.com</p>
+  <p>© 2025 Mucyo Family Bakery — All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
